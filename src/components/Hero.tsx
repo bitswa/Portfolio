@@ -35,16 +35,19 @@ export default function Hero({}: Props) {
         src={Macbook}
         alt="Macbook"
       />
+
       <motion.button
         initial={{ y: 15, opacity: 0 }}
         animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}
         whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9, transition: { type: "spring", stiffness: 400, damping: 17} }}
-        className="hover:border-[#f19953] uppercase bg-none p-2 sm:p-3 rounded-md border-2 border-[#2660A4] text-xs  text-white"
+        whileTap={{
+          scale: 0.9,
+          transition: { type: "spring", stiffness: 400, damping: 17 },
+        }}
+        onClick={(e) => (window.location.href = "#entrarEmContato")}
+        className="hover:border-[#f19953]  uppercase bg-none p-2 sm:p-3 rounded-md border-2 focus:border-[#f19953] outline-none border-[#2660A4] text-xs  text-white"
       >
-        <a href="#entrarEmContato">
-          Entrar em contato
-        </a>
+        Entrar em contato
       </motion.button>
     </div>
   );

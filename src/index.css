@@ -10,3 +10,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+@layer components {
+  body {
+    @apply scrollbar-thin scrollbar-thumb-[#f19953]
+  }
+}

@@ -13,7 +13,7 @@ function App() {
 
       {/* Pagina inicial */}
 
-      <section id="hero" >
+      <section id="inicio">
         <Hero />
       </section>
 
@@ -33,7 +33,7 @@ function App() {
       </section>
 
       {/*  Footer */}
-      <section id="" >
+      <section id="footer" >
         <Footer />
       </section>
     </div>

@@ -58,16 +58,24 @@ export default function Header({}: Props) {
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <a href="https://github.com/bitswa" target={"_blank"}>
+            <a
+              href="https://github.com/bitswa"
+              target={"_blank"}
+              className="focus:outline-[#ff9953] outline-offset-2"
+            >
               <Github />
             </a>
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.2, transition: { duration: 0.6 }}}
+            whileHover={{ scale: 1.2, transition: { duration: 0.6 } }}
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <a href="https://www.instagram.com/gabrielmdv_/" target={"_blank"}>
+            <a
+              href="https://www.instagram.com/gabrielmdv_/"
+              target={"_blank"}
+              className="focus:outline-[#ff9953] outline-offset-2"
+            >
               <Instagram />
             </a>
           </motion.li>
@@ -76,7 +84,11 @@ export default function Header({}: Props) {
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <a href="https://linkedin.com/in/gabrielmouradoval" target={"_blank"}>
+            <a
+              href="https://linkedin.com/in/gabrielmouradoval"
+              target={"_blank"}
+              className="focus:outline-[#ff9953] outline-offset-2"
+            >
               <Linkedin />
             </a>
           </motion.li>
@@ -98,7 +110,7 @@ export default function Header({}: Props) {
         >
           <li>
             <a
-              className=" text-white border-[#f19953] hover:border-b-2 font-medium tracking-[3px]"
+              className=" text-white border-[#f19953] focus:outline-[#f19953] outline-none hover:border-b-2 font-medium tracking-[3px]"
               href="#quemSou"
             >
               Quem sou
@@ -106,7 +118,7 @@ export default function Header({}: Props) {
           </li>
           <li>
             <a
-              className=" text-white border-[#f19953] hover:border-b-2 font-medium tracking-[3px]"
+              className=" text-white border-[#f19953] focus:outline-[#f19953] outline-none hover:border-b-2 font-medium tracking-[3px]"
               href="#oQueFaço"
             >
               O que faço
@@ -114,7 +126,7 @@ export default function Header({}: Props) {
           </li>
           <li>
             <a
-              className=" text-white  border-[#f19953] hover:border-b-2 font-medium tracking-[3px]"
+              className=" text-white   border-[#f19953] hover:border-b-2 focus:outline-[#f19953] outline-none font-medium tracking-[3px]"
               href="#projetos"
             >
               Projetos

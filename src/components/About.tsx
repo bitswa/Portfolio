@@ -64,7 +64,12 @@ function About({}: Props) {
           </h2>
         </div>
         <div className="flex flex-wrap justify-center gap-7 pb-2">
-          <div className="flex flex-col items-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1.5 } }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center gap-2"
+          >
             <div className="rounded-lg ">
               <img
                 className="w-20 h-20 rounded-lg"
@@ -75,39 +80,64 @@ function About({}: Props) {
               />
             </div>
             <p className="text-white text-sm">JavaScript</p>
-          </div>
-          <div className="flex flex-col items-center gap-2">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1.4 } }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center gap-2"
+          >
             <div className="bg-[#F1662A] rounded-lg ">
               <img className="w-20 h-20" src={Html} alt="" />
             </div>
 
             <p className="text-white text-sm">HTML</p>
-          </div>
-          <div className="flex flex-col items-center gap-2">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1.3 } }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center gap-2"
+          >
             <div className="bg-[#33A9DC] rounded-lg ">
               <img className="w-20 h-20" src={Css} alt="" />
             </div>
 
             <p className="text-white text-sm">CSS</p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center gap-2"
+          >
             <div className="bg-[#222222] rounded-lg">
               <img className="w-20 h-20 py-1" src={ReactIcon} alt="" />
             </div>
 
             <p className="text-white text-sm">React</p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1.1 } }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center gap-2"
+          >
             <div className="bg-[#161D2D] rounded-lg">
               <img className="w-20 h-20 p-2" src={Tailwind} alt="" />
             </div>
 
             <p className="text-white text-sm">Tailwind</p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center gap-2"
+          >
             <div className="bg-[#CD6799] rounded-lg">
               <img
                 className="w-20 h-20 px-2 py-3 self-center"
@@ -117,7 +147,7 @@ function About({}: Props) {
             </div>
 
             <p className="text-white text-sm">Sass</p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
