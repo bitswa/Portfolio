@@ -127,9 +127,9 @@ export default function Header({}: Props) {
           <li>
             <a
               className=" text-white   border-[#f19953] hover:border-b-2 focus:outline-[#f19953] outline-none font-medium tracking-[3px]"
-              href="#projetos"
+              href="#entrarEmContato"
             >
-              Projetos
+              Contato
             </a>
           </li>
         </motion.ul>

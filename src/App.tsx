@@ -29,13 +29,10 @@ function App() {
 
       {/*  Entrar em contato */}
       <section id="entrarEmContato">
-        <Contact/>
+        <Contact />
       </section>
 
-      {/*  Footer */}
-      <section id="footer" >
-        <Footer />
-      </section>
+      <Footer />
     </div>
   );
 }

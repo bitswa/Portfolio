@@ -14,7 +14,7 @@ export default function Hero({}: Props) {
   return (
     <div className="flex flex-col items-center text-center h-screen justify-center pt-14">
       <div>
-        <h1 className="uppercase text-white text-base tracking-[6px]">
+        <h1 className="uppercase p-1 text-white text-sm md:text-base tracking-[6px]">
           Gabriel Moura do Val
         </h1>
         <h2 className="uppercase text-white text-xs tracking-[6px]">

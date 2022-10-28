@@ -29,7 +29,7 @@ function Footer({}: Props) {
             viewport={{ once: true }}
             className="text-sm md:text-base"
           >
-            <a className="focus:outline-[#ff9953] outline-none" href="#inicio">Inicio</a>
+            <a className="focus:outline-[#ff9953] hover:border-b-2 border-[#ff9953] outline-none" href="#inicio">Inicio</a>
           </motion.li>
           <motion.li
             initial={{
@@ -44,7 +44,7 @@ function Footer({}: Props) {
             viewport={{ once: true }}
             className="text-sm md:text-base"
           >
-            <a className="focus:outline-[#ff9953] outline-none" href="#quemSou">Quem sou</a>
+            <a className="focus:outline-[#ff9953] hover:border-b-2 border-[#ff9953] outline-none" href="#quemSou">Quem sou</a>
           </motion.li>
           <motion.li
             initial={{
@@ -59,7 +59,7 @@ function Footer({}: Props) {
             viewport={{ once: true }}
             className="text-sm md:text-base"
           >
-            <a className="focus:outline-[#ff9953] outline-none" href="#oQueFaço">O que faço</a>
+            <a className="focus:outline-[#ff9953] hover:border-b-2 border-[#ff9953] outline-none" href="#oQueFaço">O que faço</a>
           </motion.li>
           <motion.li
             initial={{
@@ -74,7 +74,7 @@ function Footer({}: Props) {
             viewport={{ once: true }}
             className="text-sm md:text-base"
           >
-            <a className="focus:outline-[#ff9953] outline-none" href="#entrarEmContato">Contato</a>
+            <a className="focus:outline-[#ff9953] hover:border-b-2 border-[#ff9953] outline-none" href="#entrarEmContato">Contato</a>
           </motion.li>
         </ul>
         <ul className="flex flex-col  justify-start gap-2 text-white text-left">
@@ -92,7 +92,7 @@ function Footer({}: Props) {
             viewport={{ once: true }}
             className="text-sm md:text-base"
           >
-            <a className="focus:outline-[#ff9953] outline-none" target={"_blank"} href="https://github.com/bitswa">
+            <a className="focus:outline-[#ff9953] hover:border-b-2 border-[#ff9953] outline-none" target={"_blank"} href="https://github.com/bitswa">
               Github
             </a>
           </motion.li>
@@ -102,7 +102,7 @@ function Footer({}: Props) {
             viewport={{ once: true }}
             className="text-sm md:text-base"
           >
-            <a className="focus:outline-[#ff9953] outline-none" target={"_blank"} href="https://instagram.com/gabrielmdv_">
+            <a className="focus:outline-[#ff9953] hover:border-b-2 border-[#ff9953] outline-none" target={"_blank"} href="https://instagram.com/gabrielmdv_">
               Instagram
             </a>
           </motion.li>
@@ -112,7 +112,7 @@ function Footer({}: Props) {
             viewport={{ once: true }}
             className="text-sm md:text-base"
           >
-            <a className="focus:outline-[#ff9953] outline-none"
+            <a className="focus:outline-[#ff9953] hover:border-b-2 border-[#ff9953] outline-none"
               target={"_blank"}
               href="https://linkedin.com/in/gabrielmouradoval"
             >
