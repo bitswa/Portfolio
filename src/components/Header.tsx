@@ -12,7 +12,7 @@ export default function Header({}: Props) {
   const [menu, setMenu] = useState(false);
 
   return (
-    <header className="absolute w-full left-0 right-0 flex justify-end items-center max-w-4xl mx-auto p-3 lg:px-0 lg:py-3">
+    <header className="absolute w-full left-0 right-0 flex justify-end items-center max-w-4xl mx-auto p-3 lg:px-0 lg:py-3 z-10">
       <motion.button
         initial={{
           x: 50,

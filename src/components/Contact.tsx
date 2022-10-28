@@ -107,7 +107,8 @@ function Contact({}: Props) {
               }}
               viewport={{ once: true }}
               type="submit"
-              className="uppercase text-xs focus:border-[#f19953] outline-none text-white rounded-lg border-2 hover:border-[#f19953] border-[#2660A4] p-2 sm:p-3 tracking-[2px]"
+              draggable={false}
+              className="uppercase text-xs focus:border-[#f19953] outline-none text-white rounded-lg border-2 hover:border-[#f19953] border-[#2660A4] p-2 sm:p-3 tracking-[2px] select-none"
             >
               Enviar mensagem
             </motion.button>

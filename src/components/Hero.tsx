@@ -45,7 +45,8 @@ export default function Hero({}: Props) {
           transition: { type: "spring", stiffness: 400, damping: 17 },
         }}
         onClick={(e) => (window.location.href = "#entrarEmContato")}
-        className="hover:border-[#f19953]  uppercase bg-none p-2 sm:p-3 rounded-md border-2 focus:border-[#f19953] outline-none border-[#2660A4] text-xs  text-white"
+        draggable={false}
+        className="hover:border-[#f19953]  uppercase bg-none p-2 sm:p-3 rounded-md border-2 focus:border-[#f19953] outline-none border-[#2660A4] text-xs  text-white select-none"
       >
         Entrar em contato
       </motion.button>
