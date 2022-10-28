@@ -1,33 +1,26 @@
-import React, { useContext, useState } from "react";
+import React, { SetStateAction, useContext, useState } from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import useDrag from "./useDrag";
 
-import { publicApiType } from "react-horizontal-scrolling-menu/dist/types/createApi";
-import { IOItem } from "react-horizontal-scrolling-menu/dist/types/types";
 import Projects from "../projects.json";
 import LeftArrow from "./icons/LeftArrow";
 import RightArrow from "./icons/RightArrow";
 
 type Props = {};
 
-type HandleClick = {
-  getItemById: () => IOItem | undefined;
-  scrollToItem: () => void;
-};
-
 type Card = {
   title: string;
-  itemId: number;
+  itemId: string;
   selected: boolean;
   image: string;
-  onClick: ({}: HandleClick | publicApiType) => void;
+  onClick: Function
 };
 
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
 function Menu({}: Props) {
   const [projects] = useState(Projects);
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState<string>("");
 
   // NOTE: for drag by mouse
   const { dragStart, dragStop, dragMove, dragging } = useDrag();
@@ -40,23 +33,12 @@ function Menu({}: Props) {
         }
       });
 
-  const isItemSelected = (id: number) => !!selected.find((el) => el === id);
-
-  const handleClick =
-    (id: number) =>
-    ({ getItemById, scrollToItem }: HandleClick) => {
-      if (dragging) {
-        return false;
-      }
-
-      const itemSelected = isItemSelected(id);
-
-      setSelected((currentSelected) =>
-        itemSelected
-          ? currentSelected.filter((el) => el !== id)
-          : currentSelected.concat(id)
-      );
-    };
+  const handleItemClick = (id: string) => () => {
+    if (dragging) {
+      return false;
+    }
+    setSelected(selected !== id ? id : "");
+  };
 
   return (
     <div onMouseLeave={dragStop}>
@@ -73,8 +55,8 @@ function Menu({}: Props) {
             title={title}
             key={id}
             image={image}
-            onClick={handleClick(id)}
-            selected={isItemSelected(id)}
+            onClick={handleItemClick(id)}
+            selected={id === selected}
           />
         ))}
       </ScrollMenu>
@@ -82,7 +64,7 @@ function Menu({}: Props) {
   );
 }
 
-function Card({ onClick, selected, title, itemId, image }: Card) {
+function Card({ onClick, selected, title, image }: Card) {
   const visibility = useContext(VisibilityContext);
 
   return (
@@ -100,7 +82,7 @@ function Card({ onClick, selected, title, itemId, image }: Card) {
           draggable={false}
           className="w-full h-full select-none "
           src={image}
-          alt=""
+          alt="project image"
         />
       </div>
       <div className="text-white flex justify-center">{title}</div>
