@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import { Cursor } from "react-simple-typewriter";
 import Menu from "./Menu";
 
 type Props = {};
@@ -45,7 +46,7 @@ function Work({}: Props) {
             transition: { duration: 1 },
           }}
           viewport={{ once: true }}
-          className="flex flex-col justify-center items-center border-b-2 border-[#2660A4] pb-1 text-white"
+          className="relative flex flex-col justify-center items-center border-b-2 border-[#2660A4] pb-1 text-white"
         >
           <h2 className="uppercase tracking-[6px] text-sm md:text-base font-medium">
             Aplicativos
@@ -53,6 +54,10 @@ function Work({}: Props) {
           <h3 className="uppercase tracking-[3px] text-xs md:text-sm">
             Desenvolvimento Mobile
           </h3>
+          <p className="absolute bottom-[-30px] uppercase text-sm md:text-base text-white tracking-[3px]">
+            Em Progresso...
+            <Cursor cursorColor="#2660A4" />
+          </p>
         </motion.div>
       </div>
       <div className="mb-auto flex flex-col items-center text-center">
