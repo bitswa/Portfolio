@@ -50,10 +50,13 @@ function About({}: Props) {
             viewport={{ once: true }}
             className="text-white text-sm md:text-base max-w-md"
           >
-            Estudante, Programador e <span className="text-[#2660A4]">Desenvolvedor Web | Front-end</span> a mais de 1 ano,
-            melhorando a cada dia, estudando design, metodologias, novas ferramentas e linguagens.
+            Estudante, Programador e{" "}
+            <span className="text-[#2660A4]">
+              Desenvolvedor Web | Front-end
+            </span>{" "}
+            a mais de 1 ano, melhorando a cada dia, estudando design,
+            metodologias, novas ferramentas e linguagens.
             <br />
-            Também cursando o curso de Ciências da Computação - CS50 de Harvard.
           </motion.p>
         </div>
       </div>
@@ -88,7 +91,11 @@ function About({}: Props) {
             className="flex flex-col items-center gap-2"
           >
             <div className="bg-[#F1662A] rounded-lg ">
-              <img className="w-16 h-16 md:w-20 md:h-20" src={Html} alt="HTML" />
+              <img
+                className="w-16 h-16 md:w-20 md:h-20"
+                src={Html}
+                alt="HTML"
+              />
             </div>
 
             <p className="text-white text-sm">HTML</p>
@@ -113,7 +120,11 @@ function About({}: Props) {
             className="flex flex-col items-center gap-2"
           >
             <div className="bg-[#222222] rounded-lg">
-              <img className="w-16 h-16 md:w-20 md:h-20 py-1" src={ReactIcon} alt="REACT" />
+              <img
+                className="w-16 h-16 md:w-20 md:h-20 py-1"
+                src={ReactIcon}
+                alt="REACT"
+              />
             </div>
 
             <p className="text-white text-sm">React</p>
@@ -126,7 +137,11 @@ function About({}: Props) {
             className="flex flex-col items-center gap-2"
           >
             <div className="bg-[#161D2D] rounded-lg">
-              <img className="w-16 h-16 md:w-20 md:h-20 p-2" src={Tailwind} alt="TAILWINDCSS" />
+              <img
+                className="w-16 h-16 md:w-20 md:h-20 p-2"
+                src={Tailwind}
+                alt="TAILWINDCSS"
+              />
             </div>
 
             <p className="text-white text-sm">Tailwind</p>
