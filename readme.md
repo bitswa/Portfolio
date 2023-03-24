@@ -1,4 +1,4 @@
-![Preview](https://github.com/Portfolio/preview.jpg)
+![Preview](https://github.com/bitswa/Portfolio/blob/master/preview.jpg)
 
 <h2 align="center">
    <a href="https://bitswa.github.io/Portfolio">See the site</a>
