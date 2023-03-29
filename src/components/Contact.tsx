@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useForm, SubmitHandler } from "react-hook-form";
-
-type Props = {};
+import { send } from "emailjs-com";
 
 type Inputs = {
   name: string;
@@ -12,11 +11,17 @@ type Inputs = {
   message: string;
 };
 
-function Contact({}: Props) {
+function Contact() {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:gabrielmouradoval@gmail.com?.subject${formData.subject}&body=nome: ${formData.name} ${formData.lastname}, ${formData.phone}. ${formData.message}`;
+    send("service_zlkukva", "template_scmpldh", formData, "tfekUd8KtnWMKPeBX")
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+      })
+      .catch((err) => {
+        console.log("FAILED...", err);
+      });
   };
 
   return (

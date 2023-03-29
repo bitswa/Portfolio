@@ -19,7 +19,7 @@ $ cd Portfolio
 $ yarn
 ```
 
-__or__
+**or**
 
 ```
 $ npm install
@@ -33,3 +33,4 @@ $ npm install
 - [React-hook-form](https://react-hook-form.com/) - Validation Library
 - [React-horizontal-scrolling-menu](https://www.npmjs.com/package/react-horizontal-scrolling-menu) - Horizontal Menu Library
 - [React-simple-typewriter](https://www.npmjs.com/package/react-simple-typewriter) - Typewriter Animation Library
+- [EmailJS](https://www.emailjs.com/) - Allows you to send emails from your code
