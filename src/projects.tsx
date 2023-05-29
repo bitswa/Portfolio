@@ -1,41 +1,25 @@
-import SocketProject from './assets/socket1.png'
-import FirebaseAPI from './assets/firebase1.png'
-import { m } from 'framer-motion'
+import signUpProject from './assets/previewSignUpProject.png';
+import weatherProject from './assets/previewWeatherProject.png';
 
-export const Projects = [
-   {
-      "id": "0",
-      "title": "Chat - Socket.io - Firebase",
-      "image": SocketProject,
-      "description": "Projeto de Chat com Pagina de Login funcional, integrado com firebase e socket.io",
-      "link": "https://github.com/bitswa/React-chat-app-socket.io"
-    },
-    {
-      "id": "1",
-      "title": "Chat - Firebase - REST API",
-      "image": FirebaseAPI,
-      "description": "Chat com método de login pelo Google e utilizando o banco de dados para armazenar e transmitir as mensagens, também utilizado uma API de emojis.",
-      "link": "https://github.com/bitswa/React-ChatApp-Firebase"
-    },
-    {
-      "id": "2",
-      "title": "Projeto Frontendmentor",
-      "image": "https://res.cloudinary.com/dz209s6jk/image/upload/q_auto:good,w_900/Challenges/yoglpvvo0vggjf9ekjey.jpg",
-      "description": "",
-      "link": "https://github.com/bitswa/frontend-mentor/tree/main/intro-section-with-dropdown-navigation-main"
-    },
-    {
-      "id": "3",
-      "title": "Projeto Frontendmentor",
-      "image": "https://res.cloudinary.com/dz209s6jk/image/upload/q_auto:good,w_900/Challenges/wqzotbyfysz9pbfk9jus.jpg",
-      "description": "",
-      "link": "https://github.com/bitswa/frontend-mentor/tree/main/sunnyside-agency-landing-page-main"
-    },
-    {
-      "id": "4",
-      "title": "Projeto Frontendmentor",
-      "image": "https://res.cloudinary.com/dz209s6jk/image/upload/q_auto:good,w_900/Challenges/ae67ohzys48frbejvyce.jpg",
-      "description": "",
-      "link": "https://github.com/bitswa/frontend-mentor/tree/main/base-apparel-coming-soon-master"
-    }
-]
+export const Projects = () => {
+	return [
+		{
+			id: '0',
+			title: 'SISTEMA DE LOGIN',
+			image: signUpProject,
+			description:
+				'Este é um projeto de exemplo para demonstrar como criar um sistema de login usando React, Node.js e SQLite. O projeto consiste em uma aplicação web com uma página de login e uma API RESTful para autenticação e gerenciamento de usuários.',
+			source: 'https://github.com/bitswa/react-login-sqlite',
+			website: '',
+		},
+		{
+			id: '1',
+			title: 'APLICAÇÃO DE CLIMA',
+			image: weatherProject,
+			description:
+				'Este é um projeto de clima que utiliza React com TypeScript e o bundler Vite. Ele faz uma requisição para a API OpenWeatherMap usando a biblioteca Axios e o React Query. Além disso, o Tailwind CSS é usado para estilizar a aplicação.',
+			source: 'https://github.com/bitswa/react-weather',
+			website: 'https://react-weather-kohl.vercel.app/',
+		},
+	];
+};

@@ -3,33 +3,17 @@
 @tailwind utilities;
 
 * {
-  font-family: 'M PLUS 1', sans-serif;
-  font-weight: 400;
+	font-family: 'M PLUS 1', sans-serif;
+	font-weight: 400;
+	box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 @layer components {
-  body {
-    @apply scrollbar-thin scrollbar-thumb-[#f19953]
-  }
-}
-
-.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
-  display: none;
-}
-
-.react-horizontal-scrolling-menu--scroll-container {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-.selectDisable {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
+	body {
+		@apply scrollbar-thin scrollbar-thumb-[#f19953];
+	}
 }

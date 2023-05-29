@@ -1,111 +1,76 @@
-import React, { SetStateAction, useContext, useState } from "react";
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import useDrag from "./useDrag";
+import { motion } from 'framer-motion';
+import { Projects } from '../projects';
 
-import { Projects } from "../projects";
-import LeftArrow from "./icons/LeftArrow";
-import RightArrow from "./icons/RightArrow";
-import Github from "./icons/Github";
+export default function Menu() {
+	const projects = Projects();
 
-type Props = {};
-
-type Card = {
-  title: string;
-  itemId: string;
-  selected: boolean;
-  image: string;
-  onClick: Function;
-  description: string;
-  link: string
-};
-
-type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
-
-function Menu({}: Props) {
-  const [projects] = useState(Projects);
-  const [selected, setSelected] = useState<string>("");
-
-  // NOTE: for drag by mouse
-  const { dragStart, dragStop, dragMove, dragging } = useDrag();
-  const handleDrag =
-    ({ scrollContainer }: scrollVisibilityApiType) =>
-    (ev: React.MouseEvent) =>
-      dragMove(ev, (posDiff) => {
-        if (scrollContainer.current) {
-          scrollContainer.current.scrollLeft += posDiff;
-        }
-      });
-
-  const handleItemClick = (id: string) => () => {
-    if (dragging) {
-      return false;
-    }
-    setSelected(selected !== id ? id : "");
-  };
-
-  return (
-    <div onMouseLeave={dragStop}>
-      <ScrollMenu
-        LeftArrow={LeftArrow}
-        RightArrow={RightArrow}
-        onMouseMove={handleDrag}
-        onMouseDown={() => dragStart}
-        onMouseUp={() => dragStop}
-      >
-        {projects.map(({ id, image, title, description, link }) => (
-          <Card
-            itemId={id} // NOTE: itemId is required for track items
-            title={title}
-            key={id}
-            image={image}
-            description={description}
-            link={link}
-            onClick={handleItemClick(id)}
-            selected={id === selected}
-          />
-        ))}
-      </ScrollMenu>
-    </div>
-  );
+	return (
+		<div className="text-white flex flex-col gap-16">
+			{projects.map((project) => (
+				<div
+					key={project.id}
+					className={`flex flex-col h-full ${
+						Number(project.id) % 2 == 0
+							? 'md:text-left md:flex md:flex-row'
+							: 'md:text-right md:flex md:flex-row-reverse'
+					}`}
+				>
+					<div className="md:w-[50%] bg-white rounded-md flex items-center">
+						<img
+							className="rounded-md"
+							src={project.image}
+						/>
+					</div>
+					<div className="md:w-[50%] my-4 md:my-0 md:px-4 flex flex-col justify-between gap-4">
+						<h4 className="uppercase tracking-[3px] text-sm md:text-base">
+							{project.title}
+						</h4>
+						<p className="tracking-[0.5px] text-xs md:text-sm">
+							{project.description}
+						</p>
+						<div
+							className={`flex items-center justify-center gap-6 ${
+								Number(project.id) % 2 == 0
+									? 'md:justify-start'
+									: 'md:justify-end'
+							}`}
+						>
+							{project.source && (
+								<motion.button
+									initial={{ x: -10, opacity: 0 }}
+									animate={{ x: 0, opacity: 1, transition: { duration: 1 } }}
+									whileHover={{ scale: 1.1 }}
+									whileTap={{
+										scale: 0.9,
+										transition: { type: 'spring', stiffness: 400, damping: 17 },
+									}}
+									onClick={() => window.open(project.source, '_blank')}
+									draggable={false}
+									className="hover:border-[#f19953] focus:border-[#f19953] bg-none px-4 py-2  rounded-md border-2 border-[#2660A4] text-xs select-none text-white uppercase"
+								>
+									source
+								</motion.button>
+							)}
+							{project.website && (
+								<motion.button
+									initial={{ x: -10, opacity: 0 }}
+									animate={{ x: 0, opacity: 1, transition: { duration: 1 } }}
+									whileHover={{ scale: 1.1 }}
+									whileTap={{
+										scale: 0.9,
+										transition: { type: 'spring', stiffness: 400, damping: 17 },
+									}}
+									onClick={() => window.open(project.website, '_blank')}
+									draggable={false}
+									className="hover:border-[#f19953] focus:border-[#f19953] bg-none px-4 py-2  rounded-md border-2 border-[#2660A4] text-xs select-none text-white uppercase"
+								>
+									website
+								</motion.button>
+							)}
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+	);
 }
-
-function Card({ onClick, selected, title, image, description, link }: Card) {
-  const visibility = useContext(VisibilityContext);
-
-  return (
-    <div
-      onClick={() => onClick(visibility)}
-      className="w-[150px] md:w-[200px] lg:w-[300px] mx-4  inline-block select-none"
-      tabIndex={0}
-    >
-      <div className="text-white">
-        {/* <div>visible: {JSON.stringify(!!visibility.isItemVisible(itemId.toString()))}</div>
-        <div>selected: {JSON.stringify(!!selected)}</div> */}
-      </div>
-      <div className="relative h-[90px] md:h-[130px] lg:h-[180px] mb-1">
-        <img
-          draggable={false}
-          className={`${selected && "blur"} w-full h-full select-none `}
-          src={image}
-          alt="project image"
-        />
-        {selected && (
-          <div className="absolute text-white top-0 left-0 w-full flex flex-col justify-center items-center ">
-            <div className="w-full rounded-t-lg h-[40px] flex justify-center items-center bg-[#f19953]">
-              <a target={"_blank"} href={link}>
-                <Github />
-              </a>
-              
-            </div>
-            <div className="hidden lg:flex p-1  justify-center items-center">
-              <p>{description}</p>
-            </div>
-          </div>
-        )}
-      </div>
-      <div className="text-white flex justify-center">{title}</div>
-    </div>
-  );
-}
-
-export default Menu;
